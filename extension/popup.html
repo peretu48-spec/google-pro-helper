@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="color-scheme" content="light">
-<title>Google AI Pro · 注入器</title>
+<title>Google AI Pro · Injector</title>
 <style>
   * { box-sizing: border-box; }
   body {
     width: 370px; margin: 0; padding: 20px 18px 14px;
-    font: 13px/1.6 -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+    font: 13px/1.6 -apple-system, "Segoe UI", Roboto, sans-serif;
     color: #28354a; background: linear-gradient(150deg, #eef3ff 0, #f7f9fc 180px);
   }
   h1 { font-size: 17px; margin: 0 0 5px; font-weight: 700; letter-spacing: -.4px; color: #1d2c47; }
@@ -46,31 +46,31 @@
 </style>
 </head>
 <body>
-  <h1>Google AI Pro 2 年 · 注入器</h1>
-  <div class="sub">先在浏览器登录好目标号（美国区），再选层</div>
+  <h1>Google AI Pro 2-Year · Injector</h1>
+  <div class="sub">Log into target account (US region) in browser first, then select layer</div>
 
   <div class="box">
-    <div class="lbl">注入层（选完自动生效，回页面刷新一次）</div>
-    <label class="row"><input type="radio" name="layer" value="off"><span class="t">关闭注入</span></label>
-    <label class="row"><input type="radio" name="layer" value="12m"><span class="t">第一层 · 12 个月</span><span class="tag">首订</span></label>
-    <label class="row"><input type="radio" name="layer" value="6m_ss"><span class="t">第二层 · 6 个月（SS）</span><span class="tag">叠加</span></label>
-    <label class="row"><input type="radio" name="layer" value="6m"><span class="t">第三层 · 6 个月</span><span class="tag">叠加</span></label>
-    <label class="row"><input type="radio" name="layer" value="6m_2"><span class="t">备用 · 6 个月（备）</span><span class="tag">替补</span></label>
+    <div class="lbl">Injection Layer (takes effect automatically, refresh page once)</div>
+    <label class="row"><input type="radio" name="layer" value="off"><span class="t">Disable Injection</span></label>
+    <label class="row"><input type="radio" name="layer" value="12m"><span class="t">Layer 1 · 12 Months</span><span class="tag">Initial</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m_ss"><span class="t">Layer 2 · 6 Months (SS)</span><span class="tag">Stack</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m"><span class="t">Layer 3 · 6 Months</span><span class="tag">Stack</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m_2"><span class="t">Backup · 6 Months (Alt)</span><span class="tag">Backup</span></label>
   </div>
 
-  <div id="state" class="warn" role="status" aria-live="polite">当前页面未检测到注入</div>
+  <div id="state" class="warn" role="status" aria-live="polite">Injection not detected on current page</div>
 
   <ol>
-    <li>打开 <b>one.google.com/plans</b>，确认左上是目标邮箱</li>
-    <li>在上面选层 → 刷新页面 → 右下角出现「注入已挂载」</li>
-    <li>点 AI Pro 卡片的 <b>Get discount</b>，弹出 Play 结账窗</li>
-    <li>看弹窗顶部横幅：<b>绿=免费可订</b>，红=别点</li>
-    <li>加卡（美国免税邮编 97201）→ 核对金额 $0.00 → 订阅</li>
-    <li>叠下一层：回来换层 → 刷新 → 再点一次</li>
-    <li>全部完成后去 play.google.com 取消自动续订</li>
+    <li>Open <b>one.google.com/plans</b>, confirm top-left shows target email</li>
+    <li>Select layer above → refresh page → "Injection mounted" appears in bottom right</li>
+    <li>Click <b>Get discount</b> on the AI Pro card, Play checkout modal pops up</li>
+    <li>Check top banner of modal: <b>Green = Free to subscribe</b>, Red = Do not click</li>
+    <li>Add card (US tax-free zip 97201) → verify amount $0.00 → subscribe</li>
+    <li>Stack next layer: return here, switch layer → refresh → click again</li>
+    <li>After all done, go to play.google.com to cancel auto-renewal</li>
   </ol>
 
-  <div class="foot"><span>自用工具</span><a href="https://t.me/pk_oa" target="_blank">t.me/pk_oa</a></div>
+  <div class="foot"><span>Personal Tool</span><a href="https://t.me/pk_oa" target="_blank">t.me/pk_oa</a></div>
   <script src="popup.js"></script>
 </body>
 </html>

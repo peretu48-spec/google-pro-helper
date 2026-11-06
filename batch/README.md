@@ -1,46 +1,41 @@
 ========================================================================
-  Google AI Pro (5 TB) 零成本两年 (US$0.00 -> 24个月) 全自动控制台
+  Google AI Pro (5 TB) Zero Cost 2-Year (US$0.00 -> 24 Months) Automated Console
 ========================================================================
 
-【一、运行环境要求】
-1. Windows 10 / 11 系统
-2. 已安装 Google Chrome 浏览器（默认路径即可）
-3. 已安装 Python 3.10 或更高版本（安装时勾选 Add Python to PATH）
-4. 网络环境：本机开启美区（US）代理，或在控制台左侧填写代理模板
+[1. Runtime Environment Requirements]
+1. Windows 10 / 11 System
+2. Google Chrome installed (default installation path is fine)
+3. Python 3.10 or higher installed (check "Add Python to PATH" during installation)
+4. Network environment: US proxy enabled locally, or configure proxy template in the console settings
 
-【二、快速启动步骤】
-1. 首次使用请双击运行：【1_首次运行_安装依赖并启动.bat】
-2. 之后日常使用直接双击：【2_启动控制台.bat】
-3. 浏览器会自动打开控制台页面：http://127.0.0.1:8765
+[2. Quick Start Steps]
+1. For first-time use, double-click: [1_initial_setup_and_start.bat]
+2. For daily use, double-click: [2_start_console.bat]
+3. The browser will automatically open the console page: http://127.0.0.1:8765
 
-【三、自定义填写支付卡 & 跑号说明】
-1. 填写支付卡（必填）：
-   - 在网页左侧【全局配置与内联免税绑卡】区域，填入你自己的 Visa 或 Mastercard 外币卡：
-     * 卡号（16位数字）
-     * 有效期（月 / 年，如 08 / 29）
-     * 安全码（3位 CVC）
-     * 持卡人英文姓名
-     * 免税邮编默认已填好 97201（美国俄勒冈免税州），无需修改
-   - 填写后点击【💾 保存配置】。
-   - 注：脚本内置严格 0 元消费保护，仅在结账弹窗确认为 US$0.00 时才会点击订阅，全程 0 扣费。
+[3. Payment Card Setup & Account Execution Guide]
+1. Fill in Payment Card (Required):
+   - In the "Global Configuration" section on the left of the web page, enter your Visa or Mastercard card details:
+     * Card Number (16 digits)
+     * Expiration Date (MM / YY, e.g., 08 / 29)
+     * Security Code (3-digit CVC)
+     * Cardholder Name (English)
+     * Tax-free ZIP code is preset to 97201 (Oregon tax-free state), no modification needed
+   - Click [Save Configuration].
+   - Note: The script includes strict zero-cost protection; it only clicks subscribe when the checkout popup confirms US$0.00, ensuring $0 charged throughout.
 
-2. 批量导入 Google 账号：
-   - 在网页右侧【批量放号导入区】粘贴账号（每行一个），支持以下任意格式：
-     * 邮箱----密码----辅助邮箱
-     * 邮箱----密码----辅助邮箱----2FA密钥
-     * 邮箱----密码----2FA密钥
-   - 点击【➕ 一键导入账号列表】。
+2. Batch Import Google Accounts:
+   - Paste accounts in the "Import Accounts" section on the right (one per line). Supported formats include:
+     * email----password----recovery_email
+     * email----password----recovery_email----2fa_secret
+     * email----password----2fa_secret
+   - Click [Import Account List].
 
-3. 开始全自动执行：
-   - 点击单个账号右侧的【▶ 执行】或顶部的【▶ 批量全自动执行】。
-   - 脚本会自动完成：
-     Step 1: 自动登录 Google 并通过辅助邮箱 / 2FA 验证
-     Step 2: 内联免税绑卡 + 首层 12 个月免费包 (US$0.00)
-     Step 3: 叠加二层 6 个月免费包 (US$0.00 -> 18个月)
-     Step 4: 叠加三层 6 个月免费包 (US$0.00 -> 24个月封顶)
-     Step 5: 自动前往 Google Play 取消自动续订，锁死 2 年到期权益并截图验真
-
-
-# 卡网：https://faka.cdkey.si
-# 博客：https://blog.caowo.de
-# TG群：@Hello_Florence
+3. Start Automated Execution:
+   - Click [Start] next to an individual account or [Run Batch] at the top.
+   - The script will automatically complete:
+     Step 1: Automatically log in to Google and pass Recovery Email / 2FA verification
+     Step 2: Inline tax-free card binding + Layer 1 12-month free package (US$0.00)
+     Step 3: Stack Layer 2 6-month free package (US$0.00 -> 18 months)
+     Step 4: Stack Layer 3 6-month free package (US$0.00 -> 24 months cap)
+     Step 5: Navigate to Google Play to cancel auto-renewal, lock 2-year benefits, and capture verification screenshot

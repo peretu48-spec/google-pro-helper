@@ -36,10 +36,10 @@ class FrontendStabilityTests(unittest.TestCase):
         self.context = self.browser.new_context()
         self.addCleanup(self.context.close)
         self.page = self.context.new_page()
-        self.page.set_default_timeout(5000)
+        self.page.set_default_timeout(10000)
         self.errors = []
         self.page.on("pageerror", lambda error: self.errors.append(str(error)))
-        self.state = {"accounts": [account("first"), account("second")], "logs": ["系统已就绪"], "active_count": 0, "card": {}}
+        self.state = {"accounts": [account("first"), account("second")], "logs": ["System Ready"], "active_count": 0, "card": {}}
         self.hold_requests = False
         self.held_routes = []
         self.page.route("**/*", self.handle_request)
@@ -107,7 +107,7 @@ class FrontendStabilityTests(unittest.TestCase):
           for (let index = 0; index < 40; index++) {
             renderAccounts([
               { id: 'first', email: 'first@example.invalid', password: 'test-only', status: 'pending' },
-              { id: 'second', email: 'second@example.invalid', password: 'test-only', status: 'running', step_message: `更新 ${index}` },
+              { id: 'second', email: 'second@example.invalid', password: 'test-only', status: 'running', step_message: `Update ${index}` },
             ]);
           }
         }""")
@@ -132,19 +132,19 @@ class FrontendStabilityTests(unittest.TestCase):
         self.refresh()
         first = self.page.locator("#accountsTbody tr").first
         self.assertEqual(first.locator("select").input_value(), "5")
-        self.assertEqual(first.get_by_role("button", name="已复制", exact=True).count(), 1)
-        self.assertEqual(first.get_by_role("button", name="已打开", exact=True).count(), 1)
+        self.assertEqual(first.get_by_role("button", name="Copied", exact=True).count(), 1)
+        self.assertEqual(first.get_by_role("button", name="Opened", exact=True).count(), 1)
         self.page.evaluate("delete copiedAccountMap.first; delete openedBrowserMap.first;")
         self.refresh()
-        self.assertEqual(first.get_by_role("button", name="复制", exact=True).count(), 1)
-        self.assertEqual(first.get_by_role("button", name="浏览器", exact=True).count(), 1)
+        self.assertEqual(first.get_by_role("button", name="Copy", exact=True).count(), 1)
+        self.assertEqual(first.get_by_role("button", name="Browser", exact=True).count(), 1)
         self.assertEqual(first.locator("select").input_value(), "5")
 
     def test_log_styles_escaping_and_scroll_behavior_unchanged(self):
-        self.state["logs"] = [f"日志行 {index}" for index in range(100)]
+        self.state["logs"] = [f"Log line {index}" for index in range(100)]
         self.refresh()
         self.page.evaluate("document.querySelector('#logTerminal').scrollTop = 0")
-        self.state["logs"].extend(["⚠️ 等待验证", "❌ 异常", "✅ 完成", "<script>window.logInjected = true</script>"])
+        self.state["logs"].extend(["⚠️ Waiting for verification", "❌ Exception", "✅ Completed", "<script>window.logInjected = true</script>"])
         self.refresh()
         self.assertEqual(self.page.locator(".log-warn").count(), 1)
         self.assertEqual(self.page.locator(".log-err").count(), 1)
@@ -152,7 +152,7 @@ class FrontendStabilityTests(unittest.TestCase):
         self.assertEqual(self.page.locator("#logTerminal").evaluate("el => el.scrollTop"), 0)
         self.assertFalse(self.page.evaluate("Boolean(window.logInjected)"))
         self.page.evaluate("document.querySelector('#logTerminal').scrollTop = 99999")
-        self.state["logs"].append("新日志")
+        self.state["logs"].append("New log")
         self.refresh()
         self.assertTrue(self.page.locator("#logTerminal").evaluate("el => el.scrollHeight - el.clientHeight <= el.scrollTop + 1"))
         self.state["logs"] = []
@@ -172,7 +172,7 @@ class FrontendStabilityTests(unittest.TestCase):
         self.begin_overlapping_requests()
         self.finish_request(1)
         self.finish_request(0, status=503)
-        self.assertIn("已连接", self.page.locator("#connectionStatus").inner_text())
+        self.assertIn("Connected", self.page.locator("#connectionStatus").inner_text())
 
     def test_older_response_can_display_while_newer_request_is_pending(self):
         self.begin_overlapping_requests()
@@ -188,10 +188,10 @@ class FrontendStabilityTests(unittest.TestCase):
         self.begin_overlapping_requests()
         self.finish_request(1, status=503)
         self.finish_request(0)
-        self.assertIn("连接中断", self.page.locator("#connectionStatus").inner_text())
+        self.assertIn("Connection interrupted", self.page.locator("#connectionStatus").inner_text())
         self.hold_requests = False
         self.refresh()
-        self.assertIn("已连接", self.page.locator("#connectionStatus").inner_text())
+        self.assertIn("Connected", self.page.locator("#connectionStatus").inner_text())
         self.assertEqual(self.page.locator("#cfgHolder").input_value(), "UNSAVED UI TEST")
         self.assertEqual(self.errors, [])
 

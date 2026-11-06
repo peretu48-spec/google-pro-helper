@@ -1,42 +1,37 @@
 # Google Pro Helper
 
-本仓库收录两个独立版本：浏览器扩展版与批量版，分别保留各自的目录结构和原有代码。
+This repository contains two independent versions: the Browser Extension version and the Batch Console version, each maintaining their own directory structure and original codebase.
 
-| 版本 | 目录 | 简介 |
+| Version | Directory | Description |
 | --- | --- | --- |
-| 浏览器扩展版 | [extension](./extension/) | 在浏览器中使用的扩展项目，包含扩展清单、弹窗页面、脚本与图标。 |
-| 批量版 | [batch](./batch/) | 用于批量账号任务管理的本地控制台项目，包含网页界面、后端、启动脚本与测试。 |
+| Browser Extension | [extension](./extension/) | Browser extension project including manifest, popup interface, scripts, and icons. |
+| Batch Console | [batch](./batch/) | Local console project for batch account task management, including web UI, backend, startup scripts, and tests. |
 
-## 目录结构
+## Directory Structure
 
 ```text
 google-pro-helper/
-├── extension/   # 浏览器扩展版
-├── batch/       # 批量版
+├── extension/   # Browser extension version
+├── batch/       # Batch console version
 ├── .gitignore
 └── README.md
 ```
 
-## 浏览器扩展版
+## Browser Extension Version
 
-
-Linuxdo原帖在此:
+Original discussion:
 
 [https://linux.do/t/topic/3123997](https://linux.do/t/topic/3123997)
 
+(Free activation of Google AI Pro 12 / 24 months | offer token injection)
 
-（💰 免费激活 Google AI Pro 12 / 24 个月」| offer token 注入）
+> **Notice: Do not use primary accounts!**
 
-
-（我本人大部分号是用的是注册机批量搞的，原理都一样，总共整了七个目前都活过了半个月，不过被这么大批量薅，估计也活不久了）
-
-> **在此提示，不要用大号！！！！**
-
-### **1.在chrome浏览器上点击"加载未打包的拓展程序"，注意打开开发者模式**
+### **1. In Chrome browser, open Developer Mode and click "Load unpacked extension"**
 
 ![image](https://i0.hdslb.com/bfs/new_dyn/f6ecc1314583543aedb82bf0d950213e3747579686817540.png@1192w.webp)
 
-### **2.然后打开 one.google.com/plans，按照拓展里步骤，先开12月的，注意正上方的绿色提示，和右下角的提示**
+### **2. Open one.google.com/plans, follow the steps in the extension, first activate the 12-month tier. Note the green banner at top and bottom-right badge.**
 
 ![image](https://i0.hdslb.com/bfs/new_dyn/5de4698ae0cd2a371a1ecb3e6727a8823747579686817540.png@1130w_1760h.webp)
 
@@ -44,99 +39,91 @@ Linuxdo原帖在此:
 
 ![image](https://i0.hdslb.com/bfs/new_dyn/2544ad49e1db82fb90999fe3355e6fbd3747579686817540.png@92h.webp)
 
-### **3.然后选择pro套餐，进行绑卡（需要卡里有至少1u验证，u卡基本都行，测试卡：starryblu/maya/bybit/mexc/招行master/中行2233master/bitEU/wise/savo卡全都可以）付款前一定要看清，第一个步骤首月必定是0元的**
+### **3. Select the Pro plan, bind payment card (card requires at least $1 for verification, most cards work). Always verify before payment: first month must be $0.00.**
 
-> PS：这里需要说明如果是已经给了折扣的情况，如下图，付款时有极大概率需要付款首月的youtube会员，小心别被反薅，正常显示的都是在下个月才收费
+> Note: If a discount has already been applied, checkout might require paying for the first month of YouTube Premium. Be careful; normal orders only charge starting next month.
 
 ![image](https://i0.hdslb.com/bfs/new_dyn/b24d7dc8773238dce8883de6ac8fb5a13747579686817540.png@1192w.webp)
 
 ![image](https://i0.hdslb.com/bfs/new_dyn/9b5d510ce927dc364d468eb82cc7182e3747579686817540.png@1046w_1590h.webp)
 
-### **4.然后如果不再出订购页面的话，不要着急，也不要取消订阅（其实取消了也无所谓）。**
+### **4. If the subscription page no longer appears, switch the extension to 6 months, reload the page, and switch to annual billing.**
 
-先把拓展切换到六个月，再重新进入页面，接着点击切换到年付
-
-就会再次出现订购页面，这里会出现2028.5.5付款（示例日期），不要担心，这个其实还是免费的，到2028.5.5才会付款；同样的方法再次操作，切换下一个6个月，就能实现2年pro会员了
+The subscription page will appear again showing a deferred payment date (e.g. 2028-05-05). It remains free until that date. Repeat the procedure for the next 6-month tier to achieve 2 years of Pro membership.
 
 ![image](https://i0.hdslb.com/bfs/new_dyn/59a750f80e575523398a3cee77f0ae343747579686817540.png@1192w.webp)
 
-> ps：
+> Note:
 >
-> 最后一定注意取消订阅，不要被反薅，因为附带有一个每月的youtube会员需要付费，不取消的话下个月就会被反薅
+> Remember to cancel auto-renewal afterwards to avoid monthly charges for attached YouTube add-ons.
 
 ![image](https://i0.hdslb.com/bfs/new_dyn/c65340f450d8c110abd88de7f0faa99c3747579686817540.png@1192w.webp)
 
-**L站佬友补充：**
+**Community Notes:**
 
 > Fy6666:
 >
-> YouTube Premium Individual Add On无法使用。您可以单独订阅此套装中的其他商品。提示这样子怎么办呢？查了，是YouTube那个会员资格只有美国、加拿大、巴西、法国、德国、日本哦，这6个国家可以
+> If you see "YouTube Premium Individual Add On cannot be used. You can subscribe to other products in this bundle separately": YouTube add-on is only supported in US, Canada, Brazil, France, Germany, Japan.
 
 > aikavvak12una:
 >
-> 账号地区不对可以直接先添加美国的付款方式就再订阅就行了
->
-> 我的一个小号条款地区甚至是中国 🤣
-
-更改play商店支付方式即可，和谷歌账号属地无关
+> If account region is not US, you can directly add a US payment method before subscribing. Changing Google Play payment method region works regardless of Google account registration region.
 
 
-## 批量版
+## Batch Console Version
 
-**Google AI Pro (5 TB) 零成本两年 (US$0.00 -> 24个月) 全自动控制台**
+**Google AI Pro (5 TB) Zero Cost 2-Year (US$0.00 -> 24 Months) Automated Console**
 
-> 以上述“零成本两年”为项目目标，不代表已验证的订阅结果。原说明中的“全程 0 扣费”不能作为保证，实际费用和权益以结账页面及上游结果为准。
+> The "Zero Cost 2-Year" refers to the project target and does not constitute a guaranteed subscription outcome. Actual costs and benefits depend on checkout and upstream responses.
 
-### 一、运行环境要求
-1. Windows 10 / 11 系统
-2. 已安装 Google Chrome 浏览器（默认路径即可）
-3. 已安装 Python 3.10 或更高版本（安装时勾选 Add Python to PATH）
-4. 网络环境：本机开启美区（US）代理，或在控制台左侧填写代理模板
+### 1. Runtime Environment Requirements
+1. Windows 10 / 11 System
+2. Google Chrome installed (default path is fine)
+3. Python 3.10 or higher installed (check "Add Python to PATH")
+4. Network environment: US proxy enabled locally, or configure proxy template in console
 
-### 二、快速启动步骤
-1. 首次使用请双击运行：【1_首次运行_安装依赖并启动.bat】
-2. 之后日常使用直接双击：【2_启动控制台.bat】
-3. 浏览器会自动打开控制台页面：http://127.0.0.1:8765
+### 2. Quick Start Steps
+1. First-time use: double-click [1_initial_setup_and_start.bat]
+2. Daily use: double-click [2_start_console.bat]
+3. Browser opens automatically at: http://127.0.0.1:8765
 
-### 三、自定义填写支付卡 & 跑号说明
-#### 1. 填写支付卡（必填）：
-   - 在网页左侧【全局配置与内联免税绑卡】区域，填入你自己的 Visa 或 Mastercard 外币卡：
-     * 卡号（16位数字）
-     * 有效期（月 / 年，如 08 / 29）
-     * 安全码（3位 CVC）
-     * 持卡人英文姓名
-     * 免税邮编默认已填好 97201（美国俄勒冈免税州），无需修改
-   - 填写后点击【💾 保存配置】。
-   - 注：脚本内置严格 0 元消费保护，仅在结账弹窗确认为 US$0.00 时才会点击订阅，全程 0 扣费。
+### 3. Payment Card Setup & Account Execution Guide
+#### 1. Fill in Payment Card (Required):
+   - In "Global Configuration" on the left, enter your Visa or Mastercard card details:
+     * Card Number (16 digits)
+     * Expiration Date (MM / YY, e.g., 08 / 29)
+     * Security Code (3-digit CVC)
+     * Cardholder Name (English)
+     * Tax-free ZIP code preset to 97201 (Oregon tax-free state)
+   - Click [Save Configuration].
+   - Note: The script features strict zero-cost protection, only subscribing when checkout confirms US$0.00.
 
-#### 2. 批量导入 Google 账号：
-   - 在网页右侧【批量放号导入区】粘贴账号（每行一个），支持以下任意格式：
-     * 邮箱----密码----辅助邮箱
-     * 邮箱----密码----辅助邮箱----2FA密钥
-     * 邮箱----密码----2FA密钥
-   - 点击【➕ 一键导入账号列表】。
+#### 2. Batch Import Google Accounts:
+   - Paste accounts in "Import Accounts" on the right (one per line). Supported formats:
+     * email----password----recovery_email
+     * email----password----recovery_email----2fa_secret
+     * email----password----2fa_secret
+   - Click [Import Account List].
 
-#### 3. 开始全自动执行：
-   - 点击单个账号右侧的【▶ 执行】或顶部的【▶ 批量全自动执行】。
-   - 脚本会自动完成：
-     - Step 1: 自动登录 Google 并通过辅助邮箱 / 2FA 验证
-     - Step 2: 内联免税绑卡 + 首层 12 个月免费包 (US$0.00)
-     - Step 3: 叠加二层 6 个月免费包 (US$0.00 -> 18个月)
-     - Step 4: 叠加三层 6 个月免费包 (US$0.00 -> 24个月封顶)
-     - Step 5: 自动前往 Google Play 取消自动续订，锁死 2 年到期权益并截图验真
+#### 3. Start Automated Execution:
+   - Click [Start] next to an account or [Run Batch] at top.
+   - The script automates:
+     - Step 1: Log in to Google and pass Recovery Email / 2FA verification
+     - Step 2: Inline tax-free card binding + Layer 1 12-month free package (US$0.00)
+     - Step 3: Stack Layer 2 6-month free package (US$0.00 -> 18 months)
+     - Step 4: Stack Layer 3 6-month free package (US$0.00 -> 24 months cap)
+     - Step 5: Navigate to Google Play to cancel auto-renewal, lock 2-year benefits, and capture verification screenshot
 
-### 四、隔离与敏感数据
+### 4. Isolation & Sensitive Data
 
-- 浏览器扩展版位于 `extension/`，批量版位于 `batch/`，两者分目录存放。批量版原启动脚本使用当前 Python 环境安装依赖，未提供独立虚拟环境，不能宣称依赖完全隔离。
-- 批量版按账号使用独立浏览器配置目录，但这不等于虚拟机或安全沙箱。
-- 账号密码、2FA 密钥、支付卡信息和浏览器登录数据属于敏感信息；本地配置、浏览器配置目录、截图、日志及缓存不应提交到仓库。
+- Browser extension resides in `extension/`, batch console resides in `batch/`.
+- The batch console uses dedicated browser profiles per account.
+- Passwords, 2FA secrets, payment card details, and browser session data are sensitive; local configuration, profiles, screenshots, logs, and cache should not be committed to repositories.
 
 
-## 使用入口
+## Usage Entrypoints
 
-- **浏览器扩展版**：打开 Chrome 扩展管理页，开启开发者模式，选择“加载已解压的扩展程序”，加载 `extension` 目录。
-- **批量版**：在 Windows 下进入 `batch` 目录，首次使用运行 `1_首次运行_安装依赖并启动.bat`，之后运行 `2_启动控制台.bat`。
+- **Browser Extension**: Open Chrome Extension Manager, enable Developer Mode, click "Load unpacked", and select the `extension` directory.
+- **Batch Console**: Enter the `batch` directory on Windows, run `1_initial_setup_and_start.bat` for first use, and `2_start_console.bat` subsequently.
 
-两个版本独立使用。本次整理仅增加仓库分层和本页介绍，不修改项目源代码。
-
-本地账号与支付配置（`config*.json`）、环境变量文件、缓存和运行数据不提交到仓库；批量版的配置请在本地填写。
+Both versions can be used independently. Local configurations (`config*.json`), environment files, cache, and runtime data should not be committed to the repository.

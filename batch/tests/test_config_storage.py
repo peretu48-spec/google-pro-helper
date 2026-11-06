@@ -33,7 +33,7 @@ class ConfigStorageTests(unittest.TestCase):
         self.path = Path(self.directory.name) / "config.json"
         self.storage = load_storage_functions()
         self.storage["CONFIG_PATH"] = str(self.path)
-        self.previous = {"accounts": [{"id": "existing", "email": "test@example.invalid"}], "unknown_field": "保留"}
+        self.previous = {"accounts": [{"id": "existing", "email": "test@example.invalid"}], "unknown_field": "preserved"}
         self.path.write_text(json.dumps(self.previous, ensure_ascii=False, indent=2), encoding="utf-8")
         self.previous_bytes = self.path.read_bytes()
 
@@ -42,7 +42,7 @@ class ConfigStorageTests(unittest.TestCase):
         self.assertEqual(list(self.path.parent.glob(".config-*.tmp")), [])
 
     def test_round_trip_and_json_format_unchanged(self):
-        config = {"accounts": [{"id": "新账号", "status": "pending"}], "auto_cancel": False, "card": {}, "unknown_field": [1, "保留"]}
+        config = {"accounts": [{"id": "new_account", "status": "pending"}], "auto_cancel": False, "card": {}, "unknown_field": [1, "preserved"]}
         self.assertIsNone(self.storage["save_config"](config))
         self.assertEqual(self.storage["load_config"](), config)
         with self.path.open("r", encoding="utf-8") as stream:
@@ -73,7 +73,7 @@ class ConfigStorageTests(unittest.TestCase):
         self.assert_untouched()
 
     def test_replacement_receives_a_complete_closed_file_in_same_directory(self):
-        config = {"accounts": [{"id": "next"}], "unknown_field": "保留"}
+        config = {"accounts": [{"id": "next"}], "unknown_field": "preserved"}
         replace = os.replace
 
         def checked_replace(source, destination):

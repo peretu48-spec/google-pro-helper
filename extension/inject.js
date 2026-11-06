@@ -1,5 +1,5 @@
 /* Xi · Google AI Pro Offer Injector — MAIN world
- * 在 one.google.com 内劫持 Play 结账请求，把订阅商品替换为指定 offer token。
+ * Intercept Play checkout requests in one.google.com, replacing subscription product with specified offer token.
  */
 (() => {
   if (window.__GAPT_HOOKED) return;
@@ -30,7 +30,7 @@
     };
   }
 
-  /* ---------- 页面右下角状态条 ---------- */
+  /* ---------- Page bottom-right status badge ---------- */
   let badge = null;
   function showBadge(text, color) {
     try {
@@ -49,14 +49,14 @@
 
   function refreshBadge() {
     if (!currentTest) {
-      showBadge("注入器：未启用", "#f5f5f5");
+      showBadge("Injector: Disabled", "#f5f5f5");
     } else {
-      const label = { "12m": "12 个月", "6m_ss": "6 个月（SS）", "6m": "6 个月", "6m_2": "6 个月（备）" }[currentTest.layer] || currentTest.layer;
-      showBadge("注入已挂载 · " + label + (subId ? " · 续订叠加" : ""), "#eaf7ea");
+      const label = { "12m": "12 Months", "6m_ss": "6 Months (SS)", "6m": "6 Months", "6m_2": "6 Months (Alt)" }[currentTest.layer] || currentTest.layer;
+      showBadge("Injection mounted · " + label + (subId ? " · Renewal stack" : ""), "#eaf7ea");
     }
   }
 
-  /* ---------- 请求改写 ---------- */
+  /* ---------- Request rewriting ---------- */
   function patchNode(node) {
     if (!Array.isArray(node) || !currentTest || !Array.isArray(currentTest.full_items)) return false;
     let patched = false;
@@ -176,7 +176,7 @@
     return origSetAttr.call(this, name, val);
   };
 
-  /* ---------- 接收配置 ---------- */
+  /* ---------- Receive configuration ---------- */
   function applyLayer(layer) {
     const cfg = makeCfg(layer);
     currentTest = cfg ? Object.assign({ layer: layer }, cfg) : null;
@@ -199,7 +199,7 @@
     }
   });
 
-  // 首次读取（content.js 也会 post 一次）
+  // Initial read (content.js will also post once)
   const attrCfg = document.documentElement.getAttribute("data-gapt-layer");
   applyLayer(attrCfg || "off");
   document.addEventListener("DOMContentLoaded", refreshBadge);

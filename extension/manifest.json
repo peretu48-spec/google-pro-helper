@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Xi · Google AI Pro 2Y Offer Injector",
   "version": "1.0.0",
-  "description": "Google One / AI Pro 结账 offer token 注入器（自用）",
+  "description": "Google One / AI Pro checkout offer token injector (personal use)",
   "permissions": ["storage"],
   "host_permissions": [
     "https://one.google.com/*",
@@ -11,7 +11,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Google AI Pro 注入器"
+    "default_title": "Google AI Pro Injector"
   },
   "icons": {
     "16": "icons/16.png",
